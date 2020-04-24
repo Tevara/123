@@ -1,4 +1,5 @@
 @file:Suppress("UNUSED_PARAMETER")
+
 package lesson2.task2
 
 import lesson1.task1.sqr
@@ -18,15 +19,16 @@ fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
  * Четырехзначное число назовем счастливым, если сумма первых двух ее цифр равна сумме двух последних.
  * Определить, счастливое ли заданное число, вернуть true, если это так.
  */
-fun isNumberHappy(number: Int): Boolean  {
-    val firstdigit=number%10
-    val newdigit=number/10
-    val seconddigit=newdigit%10
-    val newdigit2=newdigit/10
-    val thriddigit=newdigit2%10
-    val newdigit3=newdigit2/10
-    val fourdigit=newdigit3%10
-  return firstdigit+seconddigit==thriddigit+fourdigit }
+fun isNumberHappy(number: Int): Boolean {
+    val firstdigit = number % 10
+    val newdigit = number / 10
+    val seconddigit = newdigit % 10
+    val newdigit2 = newdigit / 10
+    val thriddigit = newdigit2 % 10
+    val newdigit3 = newdigit2 / 10
+    val fourdigit = newdigit3 % 10
+    return firstdigit + seconddigit == thriddigit + fourdigit
+}
 
 
 /**
@@ -37,7 +39,7 @@ fun isNumberHappy(number: Int): Boolean  {
  * Считать, что ферзи не могут загораживать друг друга.
  */
 fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-     return (x1==x2)||(y1==y2)|| Math.abs(x2-x1)==Math.abs(y2-y1)
+    return (x1 == x2) || (y1 == y2) || Math.abs(x2 - x1) == Math.abs(y2 - y1)
 }
 
 /**
@@ -64,6 +66,6 @@ fun circleInside(x1: Double, y1: Double, r1: Double,
 fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
     val minABC = minOf(a, b, c)
     val maxABc = maxOf(a, b, c)
-    val AverageABC=a+b+c-maxABc-minABC
+    val AverageABC = a + b + c - maxABc - minABC
     return minABC <= min(r, s) && AverageABC <= max(r, s)
 }
